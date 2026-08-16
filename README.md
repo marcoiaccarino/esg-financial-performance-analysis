@@ -4,7 +4,7 @@
 
 Valutare il legame tra le iniziative di sostenibilità aziendale e la resilienza finanziaria è fondamentale per la consulenza strategica e il processo decisionale del top management. Utilizzando Excel, SQL e Power BI, questo progetto analizza un panel di 1.000 aziende globali lungo un arco temporale di 11 anni (11.000 osservazioni) per valutare come la maturità ESG impatti la redditività netta, le dinamiche di crescita e l'efficienza emissiva.
 
-[In lavorazione: le raccomandazioni e gli insight di business principali verranno inseriti al completamento delle query SQL e della dashboard]
+**Key Finding**: L'analisi evidenzia uno spread medio di **+200 bps sui margini operativi** a favore del cluster *Leader* rispetto ai *Laggard* (12,7% vs 10,7%), oltre a una frequenza di esercizi in perdita nettamente inferiore (5,6% vs 8,8%). L'esposizione al rischio emissivo si concentra prevalentemente nei settori *Energy* e *Utilities*, rendendo prioritari interventi di efficienza operativa, conformità alle normative CSRD e accesso a finanziamenti agevolati.
 
 ## Business Problem:
 
@@ -14,6 +14,16 @@ I team di Strategy ed ESG Advisory devono fornire al C-level evidenze empiriche 
 3. In che misura gli standard ESG impattano sulla frequenza e l'entità degli esercizi in perdita finanziaria?
 
 ## Methodology:
+
+### Data Sourcing & Data Integrity
+
+* **Fonte Dati**: Dataset open-source acquisito da **Kaggle** (*ESG & Financial Performance Dataset*), strutturato per simulare serie storiche di corporate sustainability reporting allineate a framework internazionali (MSCI, CSRD, GRI).
+* **Perimetro di Analisi**: Panel bilanciato di 1.000 aziende globali tracciate continuativamente lungo l'arco temporale 2015–2025 (11.000 record totali) distribuite su 8 settori industriali e 7 aree geografiche.
+* **Audit & Data Quality**:
+  * *Verifica di Integrità*: Assenza di valori nulli, duplicati o incongruenze dimensionali validata preventivamente su Google BigQuery (`Query 0`).
+  * *Normalizzazione*: Correzione delle formattazioni numeriche/delimitatori e standardizzazione delle serie storiche per garantire consistenza statistica.
+
+---
 
 1. Excel: Data cleaning, correzione dei formati numerici e dei delimitatori, gestione delle discontinuità storiche (imputazione del valore base GrowthRate 2015 a 0) e feature engineering per il calcolo di Net_Income, Carbon_Intensity ed ESG_Tier.
 
