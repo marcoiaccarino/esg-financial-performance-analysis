@@ -1,5 +1,7 @@
 # Corporate ESG & Financial Performance Analysis
 
+> **Quick Links**: [📄 Executive Report (PDF)](Executive_Report.pdf) | [📊 SQL Queries Script](sql/analysis_queries.sql)
+
 ## Executive Summary:
 
 Valutare il legame tra le iniziative di sostenibilità aziendale e la resilienza finanziaria è fondamentale per la consulenza strategica e il processo decisionale del top management. Utilizzando Excel, SQL e Power BI, questo progetto analizza un panel di 1.000 aziende globali lungo un arco temporale di 11 anni (11.000 osservazioni) per valutare come la maturità ESG impatti la redditività netta, le dinamiche di crescita e l'efficienza emissiva.
@@ -25,31 +27,32 @@ I team di Strategy ed ESG Advisory devono fornire al C-level evidenze empiriche 
 
 ---
 
-1. Excel: Data cleaning, correzione dei formati numerici e dei delimitatori, gestione delle discontinuità storiche (imputazione del valore base GrowthRate 2015 a 0) e feature engineering per il calcolo di Net_Income, Carbon_Intensity ed ESG_Tier.
+### 1. Excel (Data Cleaning & Feature Engineering)
+Data cleaning, correzione dei formati numerici e dei delimitatori, gestione delle discontinuità storiche (imputazione del valore base GrowthRate 2015 a 0) e feature engineering per il calcolo di Net_Income, Carbon_Intensity ed ESG_Tier.
 
- * **Raw Dataset iniziale:**
- <p align="left">
+* **Raw Dataset iniziale:**
+<p align="left">
   <img src="./images/1-Raw%20data.png" width="600" />
 </p>
 
 ---
 
-   * **Dataset strutturato e pulito:**
+* **Dataset strutturato e pulito:**
 <p align="left">
   <img src="./images/2-Dataset%20sistemato.png" width="600" />
 </p>
 
 ---
-   * **Feature Engineering (Net Income, Carbon Intensity, ESG Tier):**     
+
+* **Feature Engineering (Net Income, Carbon Intensity, ESG Tier):**
 <p align="left">
   <img src="./images/3-Operazioni%20effettuate%20dopo%20la%20pulizia.png" width="260" />
 </p>
 
 ---
 
-2. SQL (Google BigQuery): Importazione del data warehouse, validazione dell'integrità dei record ed esecuzione delle query analitiche aggregate con segmentazione per cluster ESG, settore industriale, area geografica e serie storica.
-
-<br>
+### 2. SQL & Data Warehouse (Google BigQuery)
+Importazione del data warehouse, validazione dell'integrità dei record ed esecuzione delle query analitiche aggregate con segmentazione per cluster ESG, settore industriale, area geografica e serie storica.
 
 #### Query 0: Data Integrity & Audit Validation
 Verifica della completezza e consistenza del perimetro di analisi sui 1.000 identificativi aziendali lungo l'orizzonte temporale 2015–2025.
@@ -85,9 +88,10 @@ Identificazione delle 5 aziende top di mercato nel cluster Leader che combinano 
 <img src="./images/8-SQL%20query4%20top%20performers.png" width="750" />
 
 ---
-## 3. Power BI Executive Dashboard
 
-### Page 1: Corporate ESG & Financial Performance Overview
+### 3. Power BI Executive Dashboard
+
+#### Page 1: Corporate ESG & Financial Performance Overview
 Analisi macro-economica focalizzata su marginalità operativa, volumi di fatturato e correlazione decennale tra maturità ESG e redditività.
 
 | Vista Generale (Tutti i Cluster) | Vista Filtrata (Focus ESG Leader) |
@@ -96,38 +100,37 @@ Analisi macro-economica focalizzata su marginalità operativa, volumi di fattura
 
 ---
 
-### Page 2: Sector Risk & Environmental Performance
+#### Page 2: Sector Risk & Environmental Performance
 Valutazione di dispersione tra intensità carbonica e punteggi ESG con cross-filtering dinamico e ispezione puntuale dei dati.
 
 | Vista Generale Settoriale | Dettaglio con Cross-Filtering (Focus Settore Energy) |
 | :---: | :---: |
 | ![Page 2 Risk Overview](images/dashboard_page2_risk.png) | ![Page 2 Filtered](images/dashboard_page2_filtered.png) |
 
-#### Ispezione Puntuale (Tooltip Interattivo)
+**Ispezione Puntuale (Tooltip Interattivo)**  
 Esempio di dettaglio informativo visualizzato al passaggio del cursore sui singoli punti di dispersione:
 
 ![Scatter Plot Tooltip](images/dashboard_page2_tooltip.png)
 
-
 ---
 
 ## Skills:
-- Excel: Data cleaning, normalizzazione formati/delimitatori, formule logiche nidificate, feature engineering, calcolo KPI (Net Income, Carbon Intensity, ESG Tier).
-- SQL (Google BigQuery): Data validation, aggregazioni complesse (AVG, COUNT, COUNTIF), conditional formatting con CASE, ranking (ORDER BY, LIMIT) e segmentazione multi-dimensionale.
-- Power BI & Data Visualization: UI/UX Dashboard Design, Page Navigator nativo, High Data-Ink Ratio, color coding semantico (Navy/Crimson/Gray), cross-filtering bidirezionale.
+- **Excel**: Data cleaning, normalizzazione formati/delimitatori, formule logiche nidificate, feature engineering, calcolo KPI (Net Income, Carbon Intensity, ESG Tier).
+- **SQL (Google BigQuery)**: Data validation, aggregazioni complesse (AVG, COUNT, COUNTIF), conditional formatting con CASE, ranking (ORDER BY, LIMIT) e segmentazione multi-dimensionale.
+- **Power BI & Data Visualization**: UI/UX Dashboard Design, Page Navigator nativo, High Data-Ink Ratio, color coding semantico (Navy/Crimson/Gray), cross-filtering bidirezionale.
 
 ## Results & Business Recommendations
 
-1. Premio di Redditività e Resilienza Finanziaria:
+1. **Premio di Redditività e Resilienza Finanziaria**:
    - **Spread di Marginalità**: I *Leader ESG* generano un margine medio del 12,7% contro il 10,7% dei *Laggard* (+200 bps).
    - **Mitigazione del Rischio di Default**: I Leader presentano una frequenza di esercizi in perdita (5,6%) nettamente inferiore rispetto a Laggard (8,85%) e Average (10,05%), dimostrando che una governance solida funge da cuscinetto protettivo contro la volatilità del mercato.
 
-2. Matrice dei Rischi Strategici:
+2. **Matrice dei Rischi Strategici**:
    - **Rischio Ambientale e di Transizione Operativa**: I settori Energy (922 ton/$M) e Utilities (701 ton/$M) concentrano la quasi totalità dell'esposizione emissiva. Senza un piano di decarbonizzazione, sono direttamente esposti all'aumento delle carbon tax e alla perdita di valore degli impianti tradizionali.
    - **Rischio Reputazionale e di Mercato**: La marcata dispersione degli score nei settori B2C (Consumer Goods e Retail) espone le aziende a fondo classifica a danni d'immagine immediati, perdita di contratti con clienti istituzionali attenti ai criteri ESG e accuse di greenwashing.
    - **Rischio Finanziario e di Accesso al Credito**: Le aziende Laggard subiscono tassi di finanziamento più elevati e minore attrattività per i fondi di investimento istituzionali (fondi Articolo 8 e 9 SFDR).
 
-3. Raccomandazioni Operative per il C-Level:
+3. **Raccomandazioni Operative per il C-Level**:
    - **Capitale & ESG**: Smettere di considerare i criteri ESG come pura conformità burocratica; adottarli come indicatore predittivo di efficienza economica e gestione del rischio creditizio.
    - **Piani di Mitigazione Mirati**: Istituire task force di audit ambientale prioritariamente sulle controllate dei settori Energy/Utilities con intensità emissiva superiore alla mediana del cluster (>300 ton/$M).
 
