@@ -75,15 +75,6 @@ Identificazione delle 5 aziende top di mercato nel cluster Leader che combinano 
 <img src="./images/8-SQL%20query4%20top%20performers.png" width="750" />
 
 ---
-
-3. Power BI: Data visualization esecutiva, UI/UX minimalista orientata all'alto data-ink ratio (principi Dona Wong/Stephen Few) e dashboarding interattivo a due pagine:
-   - Page 1 (Executive ESG Overview): KPI card aggregate, confronto marginalità per tier ESG e analisi temporale 2015–2025 su doppio asse.
-   - Page 2 (Sector Risk & Environmental Performance): Scatter plot con mediane di dispersione per carbon intensity, ranking settoriale decrescente e tabella di dettaglio disaggregata.
-
----
-
----
-
 ## 3. Power BI Executive Dashboard
 
 ### Page 1: Corporate ESG & Financial Performance Overview
@@ -91,7 +82,7 @@ Analisi macro-economica focalizzata su marginalità operativa, volumi di fattura
 
 | Vista Generale (Tutti i Cluster) | Vista Filtrata (Focus ESG Leader) |
 | :---: | :---: |
-| ![Page 1 Overview](dashboard_page1_overview.png) | ![Page 1 Filtered](dashboard_page1_filtered.png) |
+| ![Page 1 Overview](images/dashboard_page1_overview.png) | ![Page 1 Filtered](images/dashboard_page1_filtered.png) |
 
 ---
 
@@ -100,14 +91,15 @@ Valutazione di dispersione tra intensità carbonica e punteggi ESG con cross-fil
 
 | Vista Generale Settoriale | Dettaglio con Cross-Filtering (Focus Settore Energy) |
 | :---: | :---: |
-| ![Page 2 Risk Overview](dashboard_page2_risk.png) | ![Page 2 Filtered](dashboard_page2_filtered.png) |
+| ![Page 2 Risk Overview](images/dashboard_page2_risk.png) | ![Page 2 Filtered](images/dashboard_page2_filtered.png) |
 
 #### Ispezione Puntuale (Tooltip Interattivo)
 Esempio di dettaglio informativo visualizzato al passaggio del cursore sui singoli punti di dispersione:
 
-![Scatter Plot Tooltip](dashboard_page2_tooltip.png)
+![Scatter Plot Tooltip](images/dashboard_page2_tooltip.png)
 
-> 📥 **Risorse del Progetto**: Il file sorgente del report [`ESG_Corporate_Performance.pbix`](ESG_Corporate_Performance.pbix) e la versione formale [`Executive_Report.pdf`](Executive_Report.pdf) sono consultabili e scaricabili direttamente in questo repository.
+
+---
 
 ## Skills:
 - Excel: Data cleaning, normalizzazione formati/delimitatori, formule logiche nidificate, feature engineering, calcolo KPI (Net Income, Carbon Intensity, ESG Tier).
